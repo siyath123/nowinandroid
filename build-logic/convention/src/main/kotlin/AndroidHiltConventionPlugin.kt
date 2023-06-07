@@ -35,6 +35,14 @@ class AndroidHiltConventionPlugin : Plugin<Project> {
                 "kaptAndroidTest"(libs.findLibrary("hilt.compiler").get())
             }
 
+            configurations.all {
+                resolutionStrategy.eachDependency {
+                    if (requested.group == "com.google.dagger") {
+                        useVersion("HEAD-SNAPSHOT")
+                        because("HEAD-SNAPSHOT should act as latest version.")
+                    }
+                }
+            }
         }
     }
 

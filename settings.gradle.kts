@@ -20,6 +20,8 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
+        // For Hilt snapshot
+        maven("https://oss.sonatype.org/content/repositories/snapshots/")
     }
 }
 
@@ -28,6 +30,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        // For Compose snapshot
+        maven("https://androidx.dev/storage/compose-compiler/repository/")
+        // For Hilt snapshot
+        maven("https://oss.sonatype.org/content/repositories/snapshots/")
     }
 }
 rootProject.name = "nowinandroid"
